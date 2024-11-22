@@ -1,18 +1,16 @@
 <?php
 include 'conexion.php';
-session_start();
 
-$id_profesor = $_SESSION['usuario']['id'];
-
-$sql = "SELECT id, nombre FROM materias WHERE id_profesor = '$id_profesor'";
+$sql = "SELECT id, nombre FROM materias";
 $result = $conexion->query($sql);
-$materias = [];
 
 if ($result->num_rows > 0) {
+    $materias = [];
     while ($row = $result->fetch_assoc()) {
-        $materias[] = $row;
+        $materias[] = $row; // Añade cada materia al array
     }
+    echo json_encode($materias); // Devuelve el array en formato JSON
+} else {
+    echo json_encode([]); // Si no hay materias, devuelve un array vacío
 }
-
-echo json_encode($materias);
 ?>

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <ul>
                     <li><a href="subir_calificaciones.html">Subir Calificaciones</a></li>
                     <li><a href="usuarios.html">Gestión de Usuarios</a></li>
+                    <li><a href="ver_calificaciones_m.html">Ver Calificaciones</a></li>
                 </ul>
             `;
         } else if (usuario.rol === 'estudiante') {
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <ul>
                     <li><a href="usuarios.html">Gestión de Usuarios</a></li>
                     <li><a href="subir_calificaciones.html">Subir Calificaciones</a></li>
-                    <li><a href="ver_calificaciones.html">Ver Calificaciones</a></li>
+                    <li><a href="ver_calificaciones_m.html">Ver Calificaciones</a></li>
                     <li><a href="reportes.html">Generar Reportes</a></li>
                 </ul>
             `;
