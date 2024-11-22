@@ -63,3 +63,32 @@ button:hover {
         width: 100%;
     }
 }
+#dashboard-options {
+    padding: 20px;
+    text-align: center;
+}
+
+#dashboard-options h2 {
+    margin-bottom: 20px;
+}
+
+#dashboard-options ul {
+    list-style: none;
+    padding: 0;
+}
+
+#dashboard-options ul li {
+    margin: 10px 0;
+}
+
+#dashboard-options ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+#dashboard-options ul li a:hover {
+    background-color: #0056b3;
+}

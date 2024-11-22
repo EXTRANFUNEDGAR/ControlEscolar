@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Calificaciones</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Subir Calificaciones</h1>
+    </header>
+    <main>
+        <form action="php/guardar_calificacion.php" method="POST">
+            <label for="materia">Materia:</label>
+            <select name="id_materia" id="materia" required>
+                <!-- Opciones cargadas dinámicamente -->
+            </select>
+
+            <label for="estudiante">Estudiante:</label>
+            <select name="id_estudiante" id="estudiante" required>
+                <!-- Opciones cargadas dinámicamente -->
+            </select>
+
+            <label for="calificacion">Calificación:</label>
+            <input type="number" name="calificacion" id="calificacion" step="0.01" min="0" max="10" required>
+
+            <button type="submit">Guardar Calificación</button>
+        </form>
+    </main>
+    <script src="src/js/cargar_datos.js" defer></script>
+</body>
+</html>
