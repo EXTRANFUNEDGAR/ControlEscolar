@@ -1,0 +1,38 @@
+{
+    "name": "Sistema de Control Escolar",
+    "shor_name": "Control Escolar",
+    "start_url": "./",
+    "description": "Sistema de Control Escolar",
+    "display": "standalone",
+    "icons":[
+        {
+            "src": "../src/img/45.jpg",
+            "sizes": "45x45",
+            "type": "image/jpg"
+        },
+        {
+            "src": "../src/img/64.jpg",
+            "sizes": "64x64",
+            "type": "image/jpg"
+        },
+        {
+            "src": "../src/img/99.jpg",
+            "sizes": "99x99",
+            "type": "image/jpg"
+        },
+        {
+            "src": "../src/img/144.jpg",
+            "sizes": "144x144",
+            "type": "image/jpg"
+        }
+    ],
+    "related_applications": [
+        {
+            "plataform": "web"
+        },
+        {
+            "plataform": "localhost",
+            "url": "localhost"
+        }
+    ] 
+}
