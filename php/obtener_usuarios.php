@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-$sql = "SELECT id, nombre, email, rol FROM usuarios";
+$sql = "SELECT id, nombre, email, carrera, telefono, sangre, edad, genero, rol FROM usuarios";
 $result = $conexion->query($sql);
 $usuarios = [];
 

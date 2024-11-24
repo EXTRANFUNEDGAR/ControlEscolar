@@ -1,17 +1,15 @@
-/* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ecf0f1; /* Gris claro */
+    background-color: #ecf0f1;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #34495e; /* Gris oscuro */
+    color: #34495e;
 }
 
-/* Contenedor del login */
 .container {
     display: flex;
     justify-content: center;
@@ -20,9 +18,8 @@ body {
     height: 100%;
 }
 
-/* Caja de login */
 .login-box {
-    background-color: #ffffff; /* Blanco */
+    background-color: #ffffff; 
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -30,27 +27,24 @@ body {
     width: 300px;
 }
 
-/* Título */
 .login-box h2 {
-    color: #3498db; /* Azul claro o medio */
+    color: #3498db; 
     margin-bottom: 1rem;
 }
 
-/* Campos del formulario */
 .login-box input[type="email"],
 .login-box input[type="password"] {
     width: 90%;
     padding: 0.8rem;
     margin: 0.5rem 0;
-    border: 1px solid #3498db; /* Azul claro o medio */
+    border: 1px solid #3498db; 
     border-radius: 5px;
     font-size: 1rem;
 }
 
-/* Botón */
 .login-box button {
-    background-color: #3498db; /* Azul claro o medio */
-    color: #ffffff; /* Blanco */
+    background-color: #3498db; 
+    color: #ffffff; 
     padding: 0.8rem;
     border: none;
     border-radius: 5px;
@@ -62,20 +56,12 @@ body {
 }
 
 .login-box button:hover {
-    background-color: #217dbb; /* Azul más oscuro */
+    background-color: #217dbb; 
 }
 
-/* Indicador de error */
-.login-box .error {
-    color: #e74c3c; /* Rojo suave */
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
-
-/* Botón destacado */
 .login-box .highlight {
-    background-color: #f1c40f; /* Amarillo mostaza */
-    color: #ffffff; /* Blanco */
+    background-color: #f1c40f; 
+    color: #ffffff; 
     padding: 0.8rem;
     border-radius: 5px;
     font-size: 1rem;
@@ -86,5 +72,5 @@ body {
 }
 
 .login-box .highlight:hover {
-    background-color: #d4a409; /* Amarillo más oscuro */
+    background-color: #d4a409; 
 }

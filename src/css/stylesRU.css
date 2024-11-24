@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ecf0f1; 
+    color: #2c3e50;
+}
+
+header {
+    background-color: #3498db; 
+    color: #ffffff; 
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffffff; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+form input, form select, form button {
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    border: 1px solid #bdc3c7; 
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    border-color: #3498db; 
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+form button {
+    background-color: #2ecc71; 
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+.table-container {
+    overflow-x: auto; /* Permite el scroll horizontal */
+    margin-bottom: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    min-width: 800px;
+}
+
+table th, table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #bdc3c7; 
+}
+
+table th {
+    background-color: #3498db; 
+    color: #ffffff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+table tr:hover {
+    background-color: #dff0d8; 
+}
+
+h2 {
+    color: #3498db; 
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.highlight {
+    color: #f1c40f;
+}
+
+.btn-editar {
+    background-color: #f1c40f;
+    color: #ffffff; 
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-editar:hover {
+    background-color: #d4ac0d; 
+    transform: scale(1.05); 
+}
+
+.btn-editar:active {
+    background-color: #b7950b;
+    transform: scale(1); 
+}
