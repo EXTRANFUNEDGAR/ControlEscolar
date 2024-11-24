@@ -1,4 +1,4 @@
-<?php
+il<?php
 // Iniciar sesión y conexión a la base de datos
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=control_escolar', 'root', ''); // Cambia con tus credenciales
@@ -31,7 +31,7 @@ $grades = $query->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil del Alumno</title>
-    <link rel="stylesheet" href="asset/style/styles.css">
+    <link rel="stylesheet" href="asset/style/stylesperfil.css">
 </head>
 <body>
     <header>
