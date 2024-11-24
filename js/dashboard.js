@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <h2>Bienvenido, Profesor ${usuario.nombre}</h2>
                 <ul>
                     <li><a href="subir_calificaciones.html">Subir Calificaciones</a></li>
+                    <br>
                     <li><a href="usuarios.html">Gestión de Usuarios</a></li>
                 </ul>
             `;
@@ -22,8 +23,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             dashboardOptions.innerHTML = `
                 <h2>Bienvenido, Estudiante ${usuario.nombre}</h2>
                 <ul>
-                    <li><a href="ver_calificaciones.html">Ver Calificaciones</a></li>
                     <li><a href="perfil.html">Mi Perfil</a></li>
+                    <br>
+                    <li><a href="ver_calificaciones.html">Ver Calificaciones</a></li>
+                    
+                    
                 </ul>
             `;
         } else if (usuario.rol === 'admin') {
@@ -31,8 +35,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <h2>Bienvenido, Administrador ${usuario.nombre}</h2>
                 <ul>
                     <li><a href="usuarios.html">Gestión de Usuarios</a></li>
+                    <br>
                     <li><a href="subir_calificaciones.html">Subir Calificaciones</a></li>
-                    <li><a href="reportes.html">Generar Reportes</a></li>
+                    
                 </ul>
             `;
         } else {
