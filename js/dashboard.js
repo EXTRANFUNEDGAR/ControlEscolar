@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <ul>
                     <li><a href="usuarios.html">Gestión de Usuarios</a></li>
                     <li><a href="subir_calificaciones.html">Subir Calificaciones</a></li>
-                    <li><a href="reportes.html">Generar Reportes</a></li>
+                    
                 </ul>
             `;
         } else {
