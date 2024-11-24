@@ -1,37 +1,25 @@
 <?php
-// Iniciar la sesión
-session_start();
-include('conexion.php');  
+session_start();  // Iniciar la sesión para acceder a $_SESSION
 
-// Limpiar y reiniciar la sesión
-session_unset();
-session_destroy();
-session_start();
-
-// Si no hay sesión activa, asignamos un ID estático para pruebas (ID = 8)
+// Verificar si la sesión tiene el ID del usuario
 if (!isset($_SESSION['usuario']['id'])) {
-    $_SESSION['usuario'] = [
-        'id' => 8,  // ID de usuario predeterminado para pruebas
-        'nombre' => 'Estudiante de Prueba',
-        'email' => 'prueba@escolar.com',
-        'rol' => 'estudiante'
-    ];
+    // Si no está autenticado, redirigir al login
+    echo "<script>alert('No estás autenticado. Por favor, inicia sesión.'); window.location='../index.html';</script>";
+    exit; // Detener el script si el usuario no está autenticado
 }
 
-// Verificar que la conexión esté establecida correctamente
-if (!isset($conexion)) {
-    die("Error: No se pudo establecer la conexión a la base de datos.");
-}
+// Obtener el ID del usuario desde la sesión
+$student_id = $_SESSION['usuario']['id'];  // El ID se guarda en la sesión
 
-// Obtener el ID del estudiante desde la sesión
-$student_id = $_SESSION['usuario']['id'];
+// Verificar la conexión a la base de datos
+include('conexion.php');  // Incluir el archivo de conexión
 
-// Verificar la conexión antes de continuar
+// Verificar que la conexión se haya establecido correctamente
 if (!$conexion) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-// Consulta para obtener información del estudiante
+// Consulta para obtener los datos del estudiante
 $student_query = $conexion->prepare("SELECT * FROM usuarios WHERE id = ?");
 $student_query->bind_param('i', $student_id);
 $student_query->execute();
@@ -76,3 +64,4 @@ header('Content-Type: application/json');
 echo json_encode($response);
 exit;
 ?>
+
