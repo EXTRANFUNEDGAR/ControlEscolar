@@ -1,24 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Alumno</title>
+    <link rel="stylesheet" href="src/style/stylesofperfil.css">
+    <link rel="manifest" href="./public/manifest.json">
 </head>
 <body>
     <header>
-        <h1>Perfil</h1>
+        <div class="container">
+            <h1>Perfil del Alumno</h1>
+        </div>
     </header>
+
     <main>
-        <div class="profile-box">
-            <h2>Mi Perfil</h2>
-            <form>
-                <input type="text" value="Nombre" disabled>
-                <input type="email" value="Correo" disabled>
-                <button>Actualizar Información</button>
-            </form>
+        <div class="profile-container">
+            <!-- Foto y detalles personales -->
+            <div class="profile-header">
+                <div class="profile-photo">
+                    <!-- Imagen estática de perfil -->
+                    <img id="profile-image" src="src/img/perfil.png" alt="Foto de perfil">
+                </div>
+
+                <div class="profile-info">
+                    <h2>Instituto Tecnológico Superior de Guanajuato</h2>
+                    <p><strong>Nombre del Alumno:</strong> <span id="student-name"></span></p>
+                    <p><strong>Carrera:</strong> <span id="student-career"></span></p>
+                    <p><strong>Control Escolar:</strong> <span id="student-id"></span></p>
+                    <p><strong>Teléfono Cel:</strong> <span id="student-phone"></span></p>
+                    <p><strong>Tipo Sanguíneo:</strong> <span id="student-blood-type"></span></p>
+                    <p><strong>Edad:</strong> <span id="student-age"></span> años</p>
+                    <p><strong>Género:</strong> <span id="student-gender"></span></p>
+                </div>
+            </div>
+
+            <!-- Kardex -->
+            <div class="kardex-section">
+                <h3>Kardex Académico</h3>
+                <p>Las calificaciones del estudiante:</p>
+
+                <table id="grades-table">
+                    <thead>
+                        <tr>
+                            <th>Materia</th>
+                            <th>Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las calificaciones agregadas por JavaScript -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
+
+    <footer>
+    </footer>
+
+    <script>
+        // obtener los datos del estudiante
+        fetch('traerinfoperfil.php')
+            .then(response => response.json())
+            .then(studentData => {
+                // Asignar los datos al HTML
+                document.getElementById('student-name').textContent = studentData.student.nombre;
+                document.getElementById('student-career').textContent = studentData.student.carrera;
+                document.getElementById('student-id').textContent = studentData.student.id;
+                document.getElementById('student-phone').textContent = studentData.student.telefono;
+                document.getElementById('student-blood-type').textContent = studentData.student.sangre;
+                document.getElementById('student-age').textContent = studentData.student.edad;
+                document.getElementById('student-gender').textContent = studentData.student.genero;
+
+                // Mostrar las calificaciones en la tabla
+                const gradesTableBody = document.getElementById('grades-table').getElementsByTagName('tbody')[0];
+                studentData.grades.forEach(function(grade) {
+                    const row = document.createElement('tr');
+                    const cellSubject = document.createElement('td');
+                    cellSubject.textContent = grade.materia;
+                    const cellGrade = document.createElement('td');
+                    cellGrade.textContent = grade.calificacion;
+                    row.appendChild(cellSubject);
+                    row.appendChild(cellGrade);
+                    gradesTableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error al obtener los datos del estudiante:', error));
+    </script>
 </body>
 </html>
