@@ -1,8 +1,19 @@
 <?php
+session_start();
 include('conexion.php');
 
-// Obtener el ID del estudiante (puede venir de una sesión )
-$student_id = 8; // Cambiar al valor dinámico
+// Si no hay sesión activa, asignamos un ID estático para pruebas (ID = 9)
+if (!isset($_SESSION['usuario']['id'])) {
+    $_SESSION['usuario'] = [
+        'id' => 9,  // ID de usuario predeterminado para pruebas
+        'nombre' => 'Estudiante de Prueba',
+        'email' => 'prueba@escolar.com',
+        'rol' => 'estudiante'
+    ];
+}
+
+// Obtener el ID del estudiante desde la sesión
+$student_id = $_SESSION['usuario']['id'];
 
 // Consulta para obtener información del estudiante
 $student_query = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
@@ -36,4 +47,5 @@ $response = [
 // Enviar los datos como JSON
 header('Content-Type: application/json');
 echo json_encode($response);
+exit;  
 ?>
