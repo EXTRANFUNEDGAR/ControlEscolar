@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexion.php');
+include('conexion.php');  // Asegúrate de que la ruta de este archivo sea correcta
 
 // Si no hay sesión activa, asignamos un ID estático para pruebas (ID = 9)
 if (!isset($_SESSION['usuario']['id'])) {
@@ -16,14 +16,14 @@ if (!isset($_SESSION['usuario']['id'])) {
 $student_id = $_SESSION['usuario']['id'];
 
 // Consulta para obtener información del estudiante
-$student_query = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
+$student_query = $conexion->prepare("SELECT * FROM usuarios WHERE id = ?");
 $student_query->bind_param('i', $student_id);
 $student_query->execute();
 $student_result = $student_query->get_result();
 $student = $student_result->fetch_assoc();
 
 // Consulta para obtener las calificaciones del estudiante
-$grades_query = $conn->prepare("
+$grades_query = $conexion->prepare("
     SELECT materias.nombre AS materia, calificaciones.calificacion 
     FROM calificaciones
     JOIN materias ON calificaciones.id_materia = materias.id
@@ -47,5 +47,5 @@ $response = [
 // Enviar los datos como JSON
 header('Content-Type: application/json');
 echo json_encode($response);
-exit;  
+exit;
 ?>
