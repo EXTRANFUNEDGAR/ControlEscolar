@@ -140,3 +140,28 @@ footer {
         padding: 1rem;
     }
 }
+/* Estilos del botón para descargar el PDF */
+.btn-download {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color); /* Verde de la paleta */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-color); /* Azul de la paleta */
+    transform: translateY(-2px);
+}
+
+.btn-download:active {
+    background-color: var(--accent-color); /* Amarillo de la paleta */
+    transform: translateY(2px);
+}
