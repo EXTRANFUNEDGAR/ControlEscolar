@@ -5,7 +5,7 @@ include('conexion.php');  // Asegúrate de que la ruta de este archivo sea corre
 // Si no hay sesión activa, asignamos un ID estático para pruebas (ID = 9)
 if (!isset($_SESSION['usuario']['id'])) {
     $_SESSION['usuario'] = [
-        'id' => 9,  // ID de usuario predeterminado para pruebas
+        'id' => 8,  // ID de usuario predeterminado para pruebas
         'nombre' => 'Estudiante de Prueba',
         'email' => 'prueba@escolar.com',
         'rol' => 'estudiante'
