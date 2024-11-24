@@ -122,3 +122,10 @@ h2 {
     background-color: #b7950b;
     transform: scale(1); 
 }
+.fondo{
+    background-image: url('../img/halo.jpg');
+    background-size: cover;  
+    background-position: center; 
+    height: 100vh;
+   
+}

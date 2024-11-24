@@ -70,6 +70,7 @@ button:hover {
 
 #dashboard-options h2 {
     margin-bottom: 20px;
+    color: #ddd;
 }
 
 #dashboard-options ul {
@@ -94,6 +95,9 @@ button:hover {
 }
 body {
     font-family: Arial, sans-serif;
+ 
+      
+      
 }
 
 header {
@@ -121,4 +125,11 @@ th {
 
 td {
     background-color: #fafafa;
+}
+.fondo{
+    background-image: url('../img/halo.jpg');
+    background-size: cover;  
+    background-position: center; 
+    height: 100vh;
+   
 }
