@@ -1,135 +1,142 @@
+/* Reset de estilos básicos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Colores de la paleta */
+:root {
+    --primary-color: #3498DB;  /* Azul */
+    --secondary-color: #2ECC71; /* Verde */
+    --background-color: #ECF0F1; /* Gris claro */
+    --accent-color: #F1C40F;  /* Amarillo */
+    --danger-color: #E74C3C;  /* Rojo */
+}
+
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
+    color: #333;
+    line-height: 1.6;
 }
 
 header {
-    background: #333;
+    background-color: var(--primary-color);
     color: #fff;
-    text-align: center;
-    padding: 1em;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-.container, .main {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.login-box, .profile-box, form {
-    width: 300px;
-    margin: 20px auto;
-}
-
-button {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #555;
-}
-
-/* Responsividad */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    .login-box, .profile-box, form {
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
-    }
-}
-#dashboard-options {
-    padding: 20px;
-    text-align: center;
-}
-
-#dashboard-options h2 {
-    margin-bottom: 20px;
-    color: #ddd;
-}
-
-#dashboard-options ul {
-    list-style: none;
-    padding: 0;
-}
-
-#dashboard-options ul li {
-    margin: 10px 0;
-}
-
-#dashboard-options ul li a {
-    text-decoration: none;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-}
-
-#dashboard-options ul li a:hover {
-    background-color: #0056b3;
-}
-body {
-    font-family: Arial, sans-serif;
- 
-      
-      
-}
-
-header {
-    background-color: #3498db;
-    color: white;
-    text-align: center;
     padding: 1rem;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+header h1 {
+    text-align: center;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
 }
 
-th {
-    background-color: #f2f2f2;
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-td {
-    background-color: #fafafa;
+.profile-container {
+    background-color: #fff;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.fondo{
-    background-image: url('../img/halo.jpg');
-    background-size: cover;  
-    background-position: center; 
-    height: 100vh;
-   
+
+/* Estilos para el perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-photo {
+    margin-right: 2rem;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.profile-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.profile-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.profile-info strong {
+    color: var(--primary-color);
+}
+
+/* Sección del Kardex */
+.kardex-section {
+    margin-top: 2rem;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.kardex-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.kardex-link {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.kardex-link:hover {
+    background-color: var(--primary-color);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        margin-bottom: 1rem;
+    }
+
+    .profile-photo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info p {
+        font-size: 1rem;
+    }
+
+    .kardex-section {
+        padding: 1rem;
+    }
 }
