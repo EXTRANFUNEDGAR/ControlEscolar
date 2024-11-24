@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2024 a las 18:55:18
+-- Tiempo de generación: 24-11-2024 a las 05:09:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -76,20 +76,25 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `rol` enum('admin','profesor','estudiante') NOT NULL
+  `rol` enum('admin','profesor','estudiante') NOT NULL,
+  `carrera` varchar(50) NOT NULL,
+  `telefono` varchar(50) NOT NULL,
+  `sangre` varchar(50) NOT NULL,
+  `edad` int(50) NOT NULL,
+  `genero` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `rol`) VALUES
-(2, 'Admin', 'admin@escolar.com', '$2y$10$OxD9/P9aVZbvPzVfpWt9R.VVfESaI8GVl3/Wxt1zQTAiz/E1XriSm', 'admin'),
-(3, 'Estudiante', 'estudiante@escolar.com', '$2y$10$rHm/pOQqF2jD7TXGgYwB9eTcbujCnZc0Q0BzMR0x.Jh63gtqjXVIy', 'estudiante'),
-(4, 'edgar', 'enrique@tec.com', '$2y$10$IFDM1rzJyqmDVlALChloteCwuQXUpoaYHu7QhfY1hPpH4RTTyXYxy', 'admin'),
-(5, 'edgar1', 'extranfunedgar@gmail.com', '$2y$10$n9SzGOVzmXHSB4UoA8Rej.vxcVRrwKYD62fwk7KddDW3uhheYgpTC', 'admin'),
-(6, 'Cinthia', 'cinthia@tec.com', '$2y$10$9aP3BnyAIUDGxzfPuyWdmOhetqKjNBKGZcL7op/Birf7RM2wrWGla', 'profesor'),
-(8, 'enrique', 'enrique@tecg.com', '$2y$10$ZViEXVTqngs1HtAR670YFOrKDUjWpgyJhWlj2jHKPyJLjmpOCyoxq', 'estudiante');
+INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`, `rol`, `carrera`, `telefono`, `sangre`, `edad`, `genero`) VALUES
+(2, 'Admin', 'admin@escolar.com', '$2y$10$OxD9/P9aVZbvPzVfpWt9R.VVfESaI8GVl3/Wxt1zQTAiz/E1XriSm', 'admin', '', '', '', 0, ''),
+(3, 'Estudiante', 'estudiante@escolar.com', '$2y$10$rHm/pOQqF2jD7TXGgYwB9eTcbujCnZc0Q0BzMR0x.Jh63gtqjXVIy', 'estudiante', '', '', '', 0, ''),
+(4, 'edgar', 'enrique@tec.com', '$2y$10$IFDM1rzJyqmDVlALChloteCwuQXUpoaYHu7QhfY1hPpH4RTTyXYxy', 'admin', '', '', '', 0, ''),
+(5, 'edgar1', 'extranfunedgar@gmail.com', '$2y$10$n9SzGOVzmXHSB4UoA8Rej.vxcVRrwKYD62fwk7KddDW3uhheYgpTC', 'admin', '', '', '', 0, ''),
+(6, 'Cinthia', 'cinthia@tec.com', '$2y$10$9aP3BnyAIUDGxzfPuyWdmOhetqKjNBKGZcL7op/Birf7RM2wrWGla', 'profesor', '', '', '', 0, ''),
+(8, 'enrique', 'enrique@tecg.com', '$2y$10$ZViEXVTqngs1HtAR670YFOrKDUjWpgyJhWlj2jHKPyJLjmpOCyoxq', 'estudiante', '', '', '', 0, '');
 
 --
 -- Índices para tablas volcadas
