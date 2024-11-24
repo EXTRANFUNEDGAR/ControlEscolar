@@ -14,18 +14,18 @@
     </header>
     <main>
         <form action="php/guardar_calificacion.php" method="POST">
-            <label for="materia">Materia:</label>
+            <label for="materia" style="color: white;">Materia:</label>
             <select class="form-select" name="id_materia" id="materia" required>
                 <option value="">Seleccione una materia</option>
                 <!-- Las opciones se cargarán dinámicamente -->
             </select>
             <br>
-            <label for="estudiante">Estudiante:</label>
+            <label for="estudiante" style="color: white;">Estudiante:</label>
             <select class="form-select" name="id_estudiante" id="estudiante" required>
                 <!-- Opciones cargadas dinámicamente -->
             </select>
             <br>
-            <label for="calificacion">Calificación:</label>
+            <label for="calificacion" style="color: white;">Calificación:</label>
             <input class="form-control" type="number" name="calificacion" id="calificacion" step="0.01" min="0" max="10" required>
             <br>
             <br>
