@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perfil</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Alumno</title>
+    <link rel="stylesheet" href="asset/style/styles.css">
 </head>
 <body>
     <header>
-        <h1>Perfil</h1>
+        <div class="container">
+            <h1>Perfil del Alumno</h1>
+        </div>
     </header>
+
     <main>
-        <div class="profile-box">
-            <h2>Mi Perfil</h2>
-            <form>
-                <input type="text" value="Nombre" disabled>
-                <input type="email" value="Correo" disabled>
-                <button>Actualizar Información</button>
-            </form>
+        <div class="profile-container">
+            <!-- Foto y detalles personales -->
+            <div class="profile-header">
+                <div class="profile-photo">
+                    <img src="asset/img/Captura de pantalla 2024-05-21 230527.png" alt="Foto de perfil">
+                </div>
+                <div class="profile-info">
+                    <h2>Instituto Tecnologico Superior de Guanajuato</h2>
+                    <p><strong>Nombre del Alumno:</strong> Leonardo Ramsés Regalado Segoviano</p>
+                    <p><strong>Carrera:</strong> Ingeniería en Sistemas Computacionales</p>
+                    <p><strong>Control Escolar:</strong> 20111068 </p>
+                    <p><strong>Telefono Cel:</strong> 4731187827 </p>
+                    <p><strong>Tipo Sanguineo:</strong> O+ </p>
+                    <p><strong>Edad:</strong> 24 años</p>
+                    <p><strong>Género:</strong> Masculino</p>
+                </div>
+            </div>
+
+            <!-- Kardex -->
+            <div class="kardex-section">
+                <h3>Kardex Académico</h3>
+                <p>Haz clic en el siguiente enlace para descargar tu Kardex académico:</p>
+                <a href="#" class="kardex-link">Descargar Kardex</a>
+            </div>
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Control Escolar</p>
+    </footer>
 </body>
 </html>
