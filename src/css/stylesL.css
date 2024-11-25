@@ -8,6 +8,10 @@ body {
     align-items: center;
     height: 100vh;
     color: #34495e;
+    background-image: url('../img/itesg.jpg');
+    background-size: cover;  
+    background-position: center; 
+    height: 100vh;
 }
 
 .container {
