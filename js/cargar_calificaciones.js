@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const tablaCalificaciones = document.getElementById('tabla-calificaciones').getElementsByTagName('tbody')[0];
 
-    // Función para cargar las calificaciones
+    
     async function cargarCalificaciones() {
         try {
             const response = await fetch('php/obtener_calificaciones.php');
             if (!response.ok) throw new Error('Error al obtener las calificaciones.');
 
             const calificaciones = await response.json();
-            console.log('Respuesta JSON:', calificaciones);  // Agregar este log para verificar los datos
+            console.log('Respuesta JSON:', calificaciones);  
 
             if (calificaciones.length === 0) {
                 const row = tablaCalificaciones.insertRow();
@@ -29,6 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    await cargarCalificaciones(); // Llama la función para cargar las calificaciones
+    await cargarCalificaciones(); 
 });
 
