@@ -133,3 +133,25 @@ td {
     height: 100vh;
    
 }
+/* Animación de rotación infinita */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.img-rotate {
+    animation: spin 5s linear infinite; /* Gira la imagen en 5 segundos, de manera infinita */
+}
+
+/* Efecto de zoom al pasar el ratón */
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen en un 20% */
+}

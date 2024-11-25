@@ -156,3 +156,10 @@ table td button {
     background-color: #a93226;
     transform: scale(1);
 }
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen en un 20% */
+}
