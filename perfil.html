@@ -6,7 +6,7 @@
     <title>Perfil del Alumno</title>
     <link rel="stylesheet" href="src/css/stylesofperfil.css">
     <link rel="manifest" href="./public/manifest.json">
-    <!-- Agregar jsPDF -->
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
@@ -18,10 +18,10 @@
 
     <main>
         <div class="profile-container">
-            <!-- Foto y detalles personales -->
+            
             <div class="profile-header">
                 <div class="profile-photo">
-                    <!-- Imagen estática de perfil -->
+                   
                     <img id="profile-image" src="src/img/perfil.png" alt="Foto de perfil">
                 </div>
 
@@ -37,11 +37,11 @@
                 </div>
             </div>
 
-            <!-- Kardex -->
+            
             <div class="kardex-section">
                 <h3>Kardex Académico</h3>
                 <p>Las calificaciones del estudiante:</p>
-  <!-- Botón para descargar el PDF -->
+  
   <button id="download-pdf" class="btn-download">Descargar Kardex en PDF</button>
 </div>
 <table id="grades-table" style="display: none;">
@@ -52,7 +52,7 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Las calificaciones agregadas por JavaScript -->
+        
     </tbody>
 </table>
 
@@ -64,11 +64,11 @@
     </footer>
 
     <script>
-        // Obtener los datos del estudiante
+        
         fetch('php/traerinfoperfil.php')
             .then(response => response.json())
             .then(studentData => {
-                // Asignar los datos al HTML
+                
                 document.getElementById('student-name').textContent = studentData.student.nombre;
                 document.getElementById('student-career').textContent = studentData.student.carrera;
                 document.getElementById('student-id').textContent = studentData.student.id;
@@ -77,7 +77,7 @@
                 document.getElementById('student-age').textContent = studentData.student.edad;
                 document.getElementById('student-gender').textContent = studentData.student.genero;
     
-                // Mostrar las calificaciones en la tabla
+                
                 const gradesTableBody = document.getElementById('grades-table').getElementsByTagName('tbody')[0];
                 studentData.grades.forEach(function(grade) {
                     const row = document.createElement('tr');
@@ -90,22 +90,22 @@
                     gradesTableBody.appendChild(row);
                 });
     
-                //Generar PDF con formato de boleta
+                
                 document.getElementById('download-pdf').addEventListener('click', function() {
                     const { jsPDF } = window.jspdf;
                     const doc = new jsPDF();
     
-                    // Configuración de la página
+                    
                     doc.setFont('helvetica');
                     
-                    // Título del PDF
+                    
                     doc.setFontSize(18);
                     doc.setTextColor(0, 0, 0);
                     doc.text('Instituto Tecnológico Superior de Guanajuato', 20, 20);
                     doc.setFontSize(14);
                     doc.text('Kardex Académico', 20, 30);
                     
-                    // Información del estudiante
+                    
                     doc.setFontSize(12);
                     doc.text(`Nombre del estudiante: ${studentData.student.nombre}`, 20, 40);
                     doc.text(`Carrera: ${studentData.student.carrera}`, 20, 50);
@@ -115,23 +115,23 @@
                     doc.text(`Edad: ${studentData.student.edad} años`, 20, 90);
                     doc.text(`Género: ${studentData.student.genero}`, 20, 100);
                     
-                    // Línea de separación
-                    doc.line(20, 110, 190, 110);  // Línea horizontal en la página
                     
-                    // Título de las calificaciones
+                    doc.line(20, 110, 190, 110); 
+                    
+                    
                     doc.setFontSize(14);
                     doc.text('Calificaciones:', 20, 120);
     
-                    // Tabla de calificaciones con bordes
+                   
                     const startY = 130;
                     const rowHeight = 10;
                     let currentY = startY;
                     doc.setFontSize(12);
     
-                    // Cabecera de la tabla
-                    doc.setFillColor(200, 200, 255); // Color de fondo de las celdas
-                    doc.rect(20, currentY, 80, rowHeight, 'F'); // Celda "Materia"
-                    doc.rect(100, currentY, 40, rowHeight, 'F'); // Celda "Calificación"
+                    
+                    doc.setFillColor(200, 200, 255); 
+                    doc.rect(20, currentY, 80, rowHeight, 'F'); 
+                    doc.rect(100, currentY, 40, rowHeight, 'F'); 
                     
                     doc.setTextColor(0, 0, 0); 
                     doc.text('Materia', 22, currentY + 6);
@@ -141,8 +141,8 @@
     
                     
                     studentData.grades.forEach(function(grade) {
-                        doc.rect(20, currentY, 80, rowHeight);  // Celda "Materia"
-                        doc.rect(100, currentY, 40, rowHeight); // Celda "Calificación"
+                        doc.rect(20, currentY, 80, rowHeight);  
+                        doc.rect(100, currentY, 40, rowHeight); 
                         
                         doc.text(grade.materia, 22, currentY + 6);
                         doc.text(grade.calificacion.toString(), 102, currentY + 6);
@@ -150,7 +150,7 @@
                         currentY += rowHeight;
                     });
     
-                    // Descargar el PDF
+                    
                     doc.save('kardex.pdf');
                 });
             })
