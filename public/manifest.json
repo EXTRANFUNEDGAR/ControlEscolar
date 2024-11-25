@@ -6,24 +6,24 @@
     "display": "standalone",
     "icons":[
         {
-            "src": "../src/img/45.jpg",
+            "src": "../src/img/45.png",
             "sizes": "45x45",
-            "type": "image/jpg"
+            "type": "image/png"
         },
         {
-            "src": "../src/img/64.jpg",
+            "src": "../src/img/64.png",
             "sizes": "64x64",
-            "type": "image/jpg"
+            "type": "image/png"
         },
         {
-            "src": "../src/img/99.jpg",
+            "src": "../src/img/99.png",
             "sizes": "99x99",
-            "type": "image/jpg"
+            "type": "image/png"
         },
         {
-            "src": "../src/img/144.jpg",
+            "src": "../src/img/144.png",
             "sizes": "144x144",
-            "type": "image/jpg"
+            "type": "image/png"
         }
     ],
     "related_applications": [
